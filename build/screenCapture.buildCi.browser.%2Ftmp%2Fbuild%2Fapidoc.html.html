@@ -1,0 +1,2513 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>prettier (v1.2.2)</a>
+</h1>
+<h4>Prettier is an opinionated JavaScript formatter</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prettier">module prettier</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.check">
+            function <span class="apidocSignatureSpan">prettier.</span>check
+            <span class="apidocSignatureSpan">(text, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path">
+            function <span class="apidocSignatureSpan">prettier.</span>fast_path
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.format">
+            function <span class="apidocSignatureSpan">prettier.</span>format
+            <span class="apidocSignatureSpan">(text, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prettier.</span>__debug</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prettier.</span>comments</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prettier.</span>deprecated</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prettier.</span>fast_path.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prettier.</span>options</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prettier.</span>parser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prettier.</span>printer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">prettier.</span>util</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">prettier.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prettier.__debug">module prettier.__debug</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.__debug.formatAST">
+            function <span class="apidocSignatureSpan">prettier.__debug.</span>formatAST
+            <span class="apidocSignatureSpan">(ast, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.__debug.formatDoc">
+            function <span class="apidocSignatureSpan">prettier.__debug.</span>formatDoc
+            <span class="apidocSignatureSpan">(doc, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.__debug.printDocToString">
+            function <span class="apidocSignatureSpan">prettier.__debug.</span>printDocToString
+            <span class="apidocSignatureSpan">(doc, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.__debug.printToDoc">
+            function <span class="apidocSignatureSpan">prettier.__debug.</span>printToDoc
+            <span class="apidocSignatureSpan">(text, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prettier.comments">module prettier.comments</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.comments.attach">
+            function <span class="apidocSignatureSpan">prettier.comments.</span>attach
+            <span class="apidocSignatureSpan">(comments, ast, text, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.comments.printComments">
+            function <span class="apidocSignatureSpan">prettier.comments.</span>printComments
+            <span class="apidocSignatureSpan">(path, print, options, needsSemi)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.comments.printDanglingComments">
+            function <span class="apidocSignatureSpan">prettier.comments.</span>printDanglingComments
+            <span class="apidocSignatureSpan">(path, options, sameIndent)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prettier.deprecated">module prettier.deprecated</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.deprecated.useFlowParser">
+            function <span class="apidocSignatureSpan">prettier.deprecated.</span>useFlowParser
+            <span class="apidocSignatureSpan">{{signature}}</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prettier.fast_path">module prettier.fast_path</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path.fast_path">
+            function <span class="apidocSignatureSpan">prettier.</span>fast_path
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path.from">
+            function <span class="apidocSignatureSpan">prettier.fast_path.</span>from
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prettier.fast_path.prototype">module prettier.fast_path.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path.prototype.call">
+            function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>call
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path.prototype.copy">
+            function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>copy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path.prototype.each">
+            function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>each
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path.prototype.getName">
+            function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>getName
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path.prototype.getNode">
+            function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>getNode
+            <span class="apidocSignatureSpan">(count)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path.prototype.getParentNode">
+            function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>getParentNode
+            <span class="apidocSignatureSpan">(count)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path.prototype.getValue">
+            function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>getValue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path.prototype.isLast">
+            function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>isLast
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path.prototype.map">
+            function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>map
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.fast_path.prototype.needsParens">
+            function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>needsParens
+            <span class="apidocSignatureSpan">(assumeExpressionContext)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prettier.options">module prettier.options</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.options.normalize">
+            function <span class="apidocSignatureSpan">prettier.options.</span>normalize
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prettier.parser">module prettier.parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.parser.parseWithBabylon">
+            function <span class="apidocSignatureSpan">prettier.parser.</span>parseWithBabylon
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.parser.parseWithFlow">
+            function <span class="apidocSignatureSpan">prettier.parser.</span>parseWithFlow
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.parser.parseWithTypeScript">
+            function <span class="apidocSignatureSpan">prettier.parser.</span>parseWithTypeScript
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prettier.printer">module prettier.printer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.printer.printAstToDoc">
+            function <span class="apidocSignatureSpan">prettier.printer.</span>printAstToDoc
+            <span class="apidocSignatureSpan">(ast, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.prettier.util">module prettier.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.getLast">
+            function <span class="apidocSignatureSpan">prettier.util.</span>getLast
+            <span class="apidocSignatureSpan">(arr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.getNextNonSpaceNonCommentCharacter">
+            function <span class="apidocSignatureSpan">prettier.util.</span>getNextNonSpaceNonCommentCharacter
+            <span class="apidocSignatureSpan">(text, node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.getParentExportDeclaration">
+            function <span class="apidocSignatureSpan">prettier.util.</span>getParentExportDeclaration
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.getPenultimate">
+            function <span class="apidocSignatureSpan">prettier.util.</span>getPenultimate
+            <span class="apidocSignatureSpan">(arr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.getPrecedence">
+            function <span class="apidocSignatureSpan">prettier.util.</span>getPrecedence
+            <span class="apidocSignatureSpan">(op)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.hasNewline">
+            function <span class="apidocSignatureSpan">prettier.util.</span>hasNewline
+            <span class="apidocSignatureSpan">(text, index, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.hasNewlineInRange">
+            function <span class="apidocSignatureSpan">prettier.util.</span>hasNewlineInRange
+            <span class="apidocSignatureSpan">(text, start, end)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.hasSpaces">
+            function <span class="apidocSignatureSpan">prettier.util.</span>hasSpaces
+            <span class="apidocSignatureSpan">(text, index, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.htmlEscapeInsideAngleBracket">
+            function <span class="apidocSignatureSpan">prettier.util.</span>htmlEscapeInsideAngleBracket
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.isExportDeclaration">
+            function <span class="apidocSignatureSpan">prettier.util.</span>isExportDeclaration
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.isNextLineEmpty">
+            function <span class="apidocSignatureSpan">prettier.util.</span>isNextLineEmpty
+            <span class="apidocSignatureSpan">(text, node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.isPreviousLineEmpty">
+            function <span class="apidocSignatureSpan">prettier.util.</span>isPreviousLineEmpty
+            <span class="apidocSignatureSpan">(text, node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.locEnd">
+            function <span class="apidocSignatureSpan">prettier.util.</span>locEnd
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.locStart">
+            function <span class="apidocSignatureSpan">prettier.util.</span>locStart
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.setLocEnd">
+            function <span class="apidocSignatureSpan">prettier.util.</span>setLocEnd
+            <span class="apidocSignatureSpan">(node, index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.setLocStart">
+            function <span class="apidocSignatureSpan">prettier.util.</span>setLocStart
+            <span class="apidocSignatureSpan">(node, index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.skipNewline">
+            function <span class="apidocSignatureSpan">prettier.util.</span>skipNewline
+            <span class="apidocSignatureSpan">(text, index, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.skipSpaces">
+            function <span class="apidocSignatureSpan">prettier.util.</span>skipSpaces
+            <span class="apidocSignatureSpan">(text, index, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.prettier.util.skipWhitespace">
+            function <span class="apidocSignatureSpan">prettier.util.</span>skipWhitespace
+            <span class="apidocSignatureSpan">(text, index, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prettier" id="apidoc.module.prettier">module prettier</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.check" id="apidoc.element.prettier.check">
+        function <span class="apidocSignatureSpan">prettier.</span>check
+        <span class="apidocSignatureSpan">(text, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">check = function (text, opts) {
+  try {
+    const formatted = this.format(text, opts);
+    return formatted === text;
+  } catch (e) {
+    return false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  console.error("Unable to read file: " + filename + "\n" + e);
+  // Don't exit the process if one file failed
+  process.exitCode = 2;
+  return;
+}
+
+if (argv["list-different"]) {
+  if (!prettier.<span class="apidocCodeKeywordSpan">check</span>(input, options)) {
+    console.log(filename);
+    process.exitCode = 1;
+  }
+  return;
+}
+
+const start = Date.now();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path" id="apidoc.element.prettier.fast_path">
+        function <span class="apidocSignatureSpan">prettier.</span>fast_path
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FastPath(value) {
+  assert.ok(this instanceof FastPath);
+  this.stack = [value];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.format" id="apidoc.element.prettier.format">
+        function <span class="apidocSignatureSpan">prettier.</span>format
+        <span class="apidocSignatureSpan">(text, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">format = function (text, opts) {
+  return formatWithShebang(text, normalizeOptions(opts));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+The API has two functions, exported as `format` and `check`. The options
+argument is optional, and all of the defaults are shown below:
+
+```js
+const prettier = require("prettier");
+
+prettier.<span class="apidocCodeKeywordSpan">format</span>(source, {
+// Indent lines with tabs
+useTabs: false,
+
+// Fit code within this line limit
+printWidth: 80,
+
+// Number of spaces it should use per tab
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prettier.__debug" id="apidoc.module.prettier.__debug">module prettier.__debug</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.__debug.formatAST" id="apidoc.element.prettier.__debug.formatAST">
+        function <span class="apidocSignatureSpan">prettier.__debug.</span>formatAST
+        <span class="apidocSignatureSpan">(ast, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatAST = function (ast, opts) {
+  opts = normalizeOptions(opts);
+  const doc = printAstToDoc(ast, opts);
+  const str = printDocToString(doc, opts);
+  return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.__debug.formatDoc" id="apidoc.element.prettier.__debug.formatDoc">
+        function <span class="apidocSignatureSpan">prettier.__debug.</span>formatDoc
+        <span class="apidocSignatureSpan">(doc, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatDoc = function (doc, opts) {
+  opts = normalizeOptions(opts);
+  const debug = printDocToDebug(doc);
+  const str = format(debug, opts);
+  return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+trailingComma: getTrailingComma(),
+parser: getParserOption()
+};
+
+function format(input) {
+if (argv["debug-print-doc"]) {
+  const doc = prettier.__debug.printToDoc(input, options);
+  return prettier.__debug.<span class="apidocCodeKeywordSpan">formatDoc</span>(doc);
+}
+
+if (argv["debug-check"]) {
+  const pp = prettier.format(input, options);
+  const pppp = prettier.format(pp, options);
+  if (pp !== pppp) {
+    const diff = require(
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.__debug.printDocToString" id="apidoc.element.prettier.__debug.printDocToString">
+        function <span class="apidocSignatureSpan">prettier.__debug.</span>printDocToString
+        <span class="apidocSignatureSpan">(doc, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">printDocToString = function (doc, opts) {
+  opts = normalizeOptions(opts);
+  const str = printDocToString(doc, opts);
+  return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.__debug.printToDoc" id="apidoc.element.prettier.__debug.printToDoc">
+        function <span class="apidocSignatureSpan">prettier.__debug.</span>printToDoc
+        <span class="apidocSignatureSpan">(text, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">printToDoc = function (text, opts) {
+  opts = normalizeOptions(opts);
+  const ast = parse(text, opts);
+  attachComments(text, ast, opts);
+  const doc = printAstToDoc(ast, opts);
+  return doc;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+jsxBracketSameLine: argv["jsx-bracket-same-line"],
+trailingComma: getTrailingComma(),
+parser: getParserOption()
+};
+
+function format(input) {
+if (argv["debug-print-doc"]) {
+  const doc = prettier.__debug.<span class="apidocCodeKeywordSpan">printToDoc</span>(input, options);
+  return prettier.__debug.formatDoc(doc);
+}
+
+if (argv["debug-check"]) {
+  const pp = prettier.format(input, options);
+  const pppp = prettier.format(pp, options);
+  if (pp !== pppp) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prettier.comments" id="apidoc.module.prettier.comments">module prettier.comments</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.comments.attach" id="apidoc.element.prettier.comments.attach">
+        function <span class="apidocSignatureSpan">prettier.comments.</span>attach
+        <span class="apidocSignatureSpan">(comments, ast, text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function attach(comments, ast, text, options) {
+  if (!isArray.check(comments)) {
+    return;
+  }
+
+  var tiesToBreak = [];
+
+  comments.forEach((comment, i) =&gt; {
+    decorateComment(ast, comment, text);
+
+    const precedingNode = comment.precedingNode;
+    const enclosingNode = comment.enclosingNode;
+    const followingNode = comment.followingNode;
+
+    const isLastComment = comments.length - 1 === i;
+
+    if (util.hasNewline(text, locStart(comment), { backwards: true })) {
+      // If a comment exists on its own line, prefer a leading comment.
+      // We also need to check if it's the first line of the file.
+      if (
+        handleLastFunctionArgComments(
+          text,
+          precedingNode,
+          enclosingNode,
+          followingNode,
+          comment
+        ) ||
+        handleMemberExpressionComments(enclosingNode, followingNode, comment) ||
+        handleIfStatementComments(
+          text,
+          precedingNode,
+          enclosingNode,
+          followingNode,
+          comment
+        ) ||
+        handleTryStatementComments(enclosingNode, followingNode, comment) ||
+        handleClassComments(enclosingNode, comment) ||
+        handleImportSpecifierComments(enclosingNode, comment) ||
+        handleObjectPropertyComments(enclosingNode, comment) ||
+        handleForComments(enclosingNode, precedingNode, comment) ||
+        handleUnionTypeComments(
+          precedingNode,
+          enclosingNode,
+          followingNode,
+          comment
+        ) ||
+        handleOnlyComments(enclosingNode, ast, comment, isLastComment) ||
+        handleImportDeclarationComments(
+          enclosingNode,
+          precedingNode,
+          comment
+        ) ||
+        handleAssignmentPatternComments(enclosingNode, comment)
+      ) {
+        // We're good
+      } else if (followingNode) {
+        // Always a leading comment.
+        addLeadingComment(followingNode, comment);
+      } else if (precedingNode) {
+        addTrailingComment(precedingNode, comment);
+      } else if (enclosingNode) {
+        addDanglingComment(enclosingNode, comment);
+      } else {
+        // There are no nodes, let's attach it to the root of the ast
+        addDanglingComment(ast, comment);
+      }
+    } else if (util.hasNewline(text, locEnd(comment))) {
+      if (
+        handleConditionalExpressionComments(
+          enclosingNode,
+          precedingNode,
+          followingNode,
+          comment,
+          text
+        ) ||
+        handleImportSpecifierComments(enclosingNode, comment) ||
+        handleTemplateLiteralComments(enclosingNode, comment) ||
+        handleIfStatementComments(
+          text,
+          precedingNode,
+          enclosingNode,
+          followingNode,
+          comment
+        ) ||
+        handleClassComments(enclosingNode, comment) ||
+        handleLabeledStatementComments(enclosingNode, comment) ||
+        handleCallExpressionComments(precedingNode, enclosingNode, comment) ||
+        handlePropertyComments(enclosingNode, comment) ||
+        handleExportNamedDeclarationComments(enclosingNode, comment) ||
+        handleOnlyComments(enclosingNode, ast, comment, isLastComment) ||
+        handleClassMethodComments(enclosingNode, comment) ||
+        handleTypeAliasComments(enclosingNode, followingNode, comment) ||
+        handleVariableDeclaratorComments(enclosingNode, followingNode, comment)
+      ) {
+        // We're good
+      } else if (precedingNode) {
+        // There is content before this comment on the same line, but
+        // none after it, so prefer a trailing comment of the previous node.
+        addTrailingComment(precedingNode, comment);
+      } else if (followingNode) {
+        addLeadingComment(followingNode, comment);
+      } else if (enclosingNode) {
+        addDanglingComment(enclosingNode, comment);
+      } else {
+        // There are no nodes, let's attach it to the root of the ast
+        addDanglingComment(ast, comment);
+      }
+    } else {
+      if (
+        handleIfStatementComments(
+          text,
+          precedingNode,
+          enclosingNode,
+          followingNode,
+          comment ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+}
+
+function attachComments(text, ast, opts) {
+  const astComments = ast.comments;
+  if (astComments) {
+    delete ast.comments;
+    comments.<span class="apidocCodeKeywordSpan">attach</span>(astComments, ast, text, opts);
+  }
+  ast.tokens = [];
+  opts.originalText = text.trimRight();
+  return astComments;
+}
+
+function ensureAllCommentsPrinted(astComments) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.comments.printComments" id="apidoc.element.prettier.comments.printComments">
+        function <span class="apidocSignatureSpan">prettier.comments.</span>printComments
+        <span class="apidocSignatureSpan">(path, print, options, needsSemi)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function printComments(path, print, options, needsSemi) {
+  var value = path.getValue();
+  var parent = path.getParentNode();
+  var printed = print(path);
+  var comments = n.Node.check(value) &amp;&amp; types.getFieldValue(value, "comments");
+
+  if (!comments || comments.length === 0) {
+    return printed;
+  }
+
+  var leadingParts = [];
+  var trailingParts = [needsSemi ? ";" : "", printed];
+
+  path.each(function(commentPath) {
+    var comment = commentPath.getValue();
+    var leading = types.getFieldValue(comment, "leading");
+    var trailing = types.getFieldValue(comment, "trailing");
+
+    if (leading) {
+      leadingParts.push(printLeadingComment(commentPath, print, options));
+
+      const text = options.originalText;
+      if (util.hasNewline(text, util.skipNewline(text, util.locEnd(comment)))) {
+        leadingParts.push(hardline);
+      }
+    } else if (trailing) {
+      trailingParts.push(
+        printTrailingComment(commentPath, print, options, parent)
+      );
+    }
+  }, "comments");
+
+  return concat(leadingParts.concat(trailingParts));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    !node.computed &amp;&amp;
+    // There's a bug in the flow parser where it throws if there are
+    // unquoted unicode literals as keys. Let's quote them for now.
+    (options.parser !== "flow" || key.value.match(/[a-zA-Z0-9$_]/))
+  ) {
+    // 'a' -&gt; a
+    return path.call(
+      keyPath =&gt; comments.<span class="apidocCodeKeywordSpan">printComments</span>(keyPath, p =&gt; key.value, options),
+      "key"
+    );
+  }
+  return path.call(print, "key");
+}
+
+function printMethod(path, options, print) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.comments.printDanglingComments" id="apidoc.element.prettier.comments.printDanglingComments">
+        function <span class="apidocSignatureSpan">prettier.comments.</span>printDanglingComments
+        <span class="apidocSignatureSpan">(path, options, sameIndent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function printDanglingComments(path, options, sameIndent) {
+  const text = options.originalText;
+  const parts = [];
+  const node = path.getValue();
+
+  if (!node || !node.comments) {
+    return "";
+  }
+
+  path.each(commentPath =&gt; {
+    const comment = commentPath.getValue();
+    if (!comment.leading &amp;&amp; !comment.trailing) {
+      parts.push(printComment(commentPath));
+    }
+  }, "comments");
+
+  if (parts.length === 0) {
+    return "";
+  }
+
+  if (sameIndent) {
+    return join(hardline, parts);
+  }
+  return indent(concat([hardline, join(hardline, parts)]));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+parts.push(
+  path.call(function(bodyPath) {
+    return printStatementSequence(bodyPath, options, print);
+  }, "body")
+);
+
+parts.push(
+  comments.<span class="apidocCodeKeywordSpan">printDanglingComments</span>(path, options, /* sameIndent */ true)
+);
+
+// Only force a trailing newline if there were any contents.
+if (n.body.length || n.comments) {
+  parts.push(hardline);
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prettier.deprecated" id="apidoc.module.prettier.deprecated">module prettier.deprecated</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.deprecated.useFlowParser" id="apidoc.element.prettier.deprecated.useFlowParser">
+        function <span class="apidocSignatureSpan">prettier.deprecated.</span>useFlowParser
+        <span class="apidocSignatureSpan">{{signature}}</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">config =&gt;
+  `  The ${'"useFlowParser"'} option is deprecated. Use ${'"parser"'} instead.
+
+Prettier now treats your configuration as:
+{
+  ${'"parser"'}: ${config.useFlowParser ? '"flow"' : '"babylon"'}
+}`</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prettier.fast_path" id="apidoc.module.prettier.fast_path">module prettier.fast_path</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path.fast_path" id="apidoc.element.prettier.fast_path.fast_path">
+        function <span class="apidocSignatureSpan">prettier.</span>fast_path
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FastPath(value) {
+  assert.ok(this instanceof FastPath);
+  this.stack = [value];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path.from" id="apidoc.element.prettier.fast_path.from">
+        function <span class="apidocSignatureSpan">prettier.fast_path.</span>from
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">from = function (obj) {
+  if (obj instanceof FastPath) {
+    // Return a defensive copy of any existing FastPath instances.
+    return obj.copy();
+  }
+
+  if (obj instanceof types.NodePath) {
+    // For backwards compatibility, unroll NodePath instances into
+    // lightweight FastPath [..., name, value] stacks.
+    var copy = Object.create(FastPath.prototype);
+    var stack = [obj.value];
+    for (var pp; (pp = obj.parentPath); obj = pp)
+      stack.push(obj.name, pp.value);
+    copy.stack = stack.reverse();
+    return copy;
+  }
+
+  // Otherwise use obj as the value of the new FastPath instance.
+  return new FastPath(obj);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      path,
+      p =&gt; genericPrint(p, options, printGenerically, args),
+      options,
+      args &amp;&amp; args.needsSemi
+    );
+  }
+
+  const doc = printGenerically(FastPath.<span class="apidocCodeKeywordSpan">from</span>(ast));
+  docUtils.propagateBreaks(doc);
+  return doc;
+}
+
+module.exports = { printAstToDoc };
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prettier.fast_path.prototype" id="apidoc.module.prettier.fast_path.prototype">module prettier.fast_path.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path.prototype.call" id="apidoc.element.prettier.fast_path.prototype.call">
+        function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>call
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function call(callback) {
+  var s = this.stack;
+  var origLen = s.length;
+  var value = s[origLen - 1];
+  var argc = arguments.length;
+  for (var i = 1; i &lt; argc; ++i) {
+    var name = arguments[i];
+    value = value[name];
+    s.push(name, value);
+  }
+  var result = callback(this);
+  s.length = origLen;
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// TODO: Investigate types that return not printable.
+// This assert isn't very useful though.
+// namedTypes.Printable.assert(n);
+
+var parts = [];
+switch (n.type) {
+  case "File":
+    return path.<span class="apidocCodeKeywordSpan">call</span>(print, "program");
+  case "Program":
+    // Babel 6
+    if (n.directives) {
+      path.each(function(childPath) {
+        parts.push(print(childPath), semi, hardline);
+        if (
+          util.isNextLineEmpty(options.originalText, childPath.getValue())
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path.prototype.copy" id="apidoc.element.prettier.fast_path.prototype.copy">
+        function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>copy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function copy() {
+  var copy = Object.create(FastPath.prototype);
+  copy.stack = this.stack.slice(0);
+  return copy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var FPp = FastPath.prototype;
+
+// Static convenience function for coercing a value to a FastPath.
+FastPath.from = function(obj) {
+if (obj instanceof FastPath) {
+  // Return a defensive copy of any existing FastPath instances.
+  return obj.<span class="apidocCodeKeywordSpan">copy</span>();
+}
+
+if (obj instanceof types.NodePath) {
+  // For backwards compatibility, unroll NodePath instances into
+  // lightweight FastPath [..., name, value] stacks.
+  var copy = Object.create(FastPath.prototype);
+  var stack = [obj.value];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path.prototype.each" id="apidoc.element.prettier.fast_path.prototype.each">
+        function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>each
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function each(callback) {
+  var s = this.stack;
+  var origLen = s.length;
+  var value = s[origLen - 1];
+  var argc = arguments.length;
+
+  for (var i = 1; i &lt; argc; ++i) {
+    var name = arguments[i];
+    value = value[name];
+    s.push(name, value);
+  }
+
+  for (var i = 0; i &lt; value.length; ++i) {
+    if (i in value) {
+      s.push(i, value[i]);
+      // If the callback needs to know the value of i, call
+      // path.getName(), assuming path is the parameter name.
+      callback(this);
+      s.length -= 2;
+    }
+  }
+
+  s.length = origLen;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const parts = [];
+const node = path.getValue();
+
+if (!node || !node.comments) {
+  return "";
+}
+
+path.<span class="apidocCodeKeywordSpan">each</span>(commentPath =&gt; {
+  const comment = commentPath.getValue();
+  if (!comment.leading &amp;&amp; !comment.trailing) {
+    parts.push(printComment(commentPath));
+  }
+}, "comments");
+
+if (parts.length === 0) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path.prototype.getName" id="apidoc.element.prettier.fast_path.prototype.getName">
+        function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>getName
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getName() {
+  var s = this.stack;
+  var len = s.length;
+  if (len &gt; 1) {
+    return s[len - 2];
+  }
+  // Since the name is always a string, null is a safe sentinel value to
+  // return if we do not know the name of the (root) value.
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    s.push(name, value);
+  }
+
+  for (var i = 0; i &lt; value.length; ++i) {
+    if (i in value) {
+      s.push(i, value[i]);
+      // If the callback needs to know the value of i, call
+      // path.<span class="apidocCodeKeywordSpan">getName</span>(), assuming path is the parameter name.
+      callback(this);
+      s.length -= 2;
+    }
+  }
+
+  s.length = origLen;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path.prototype.getNode" id="apidoc.element.prettier.fast_path.prototype.getNode">
+        function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>getNode
+        <span class="apidocSignatureSpan">(count)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getNode(count) {
+  return getNodeHelper(this, ~~count);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+FPp.needsParens = function(assumeExpressionContext) {
+var parent = this.getParentNode();
+if (!parent) {
+  return false;
+}
+
+var name = this.getName();
+var node = this.<span class="apidocCodeKeywordSpan">getNode</span>();
+
+// If the value of this path is some child of a Node and not a Node
+// itself, then it doesn't need parentheses. Only Node objects (in
+// fact, only Expression nodes) need parentheses.
+if (this.getValue() !== node) {
+  return false;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path.prototype.getParentNode" id="apidoc.element.prettier.fast_path.prototype.getParentNode">
+        function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>getParentNode
+        <span class="apidocSignatureSpan">(count)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getParentNode(count) {
+  return getNodeHelper(this, ~~count + 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return join(hardline, parts);
+}
+return indent(concat([hardline, join(hardline, parts)]));
+}
+
+function printComments(path, print, options, needsSemi) {
+var value = path.getValue();
+var parent = path.<span class="apidocCodeKeywordSpan">getParentNode</span>();
+var printed = print(path);
+var comments = n.Node.check(value) &amp;&amp; types.getFieldValue(value, "comments");
+
+if (!comments || comments.length === 0) {
+  return printed;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path.prototype.getValue" id="apidoc.element.prettier.fast_path.prototype.getValue">
+        function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>getValue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getValue() {
+  var s = this.stack;
+  return s[s.length - 1];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  addLeadingComment(followingNode, comment);
+  return true;
+}
+return false;
+}
+
+function printComment(commentPath) {
+const comment = commentPath.<span class="apidocCodeKeywordSpan">getValue</span>();
+comment.printed = true;
+
+switch (comment.type) {
+  case "CommentBlock":
+  case "Block":
+    return "/*" + comment.value + "*/";
+  case "CommentLine":
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path.prototype.isLast" id="apidoc.element.prettier.fast_path.prototype.isLast">
+        function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>isLast
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isLast() {
+  var s = this.stack;
+  if (this.getParentNode()) {
+    var idx = s[s.length - 2];
+    // The name of this node should be an index
+    assert.ok(typeof idx === "number");
+
+    const arr = s[s.length - 3];
+    // We should have an array as a parent node
+    assert.ok(Array.isArray(arr));
+
+    return idx === arr.length - 1;
+  }
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path.prototype.map" id="apidoc.element.prettier.fast_path.prototype.map">
+        function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>map
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function map(callback) {
+  var s = this.stack;
+  var origLen = s.length;
+  var value = s[origLen - 1];
+  var argc = arguments.length;
+
+  for (var i = 1; i &lt; argc; ++i) {
+    var name = arguments[i];
+    value = value[name];
+    s.push(name, value);
+  }
+
+  var result = new Array(value.length);
+
+  for (var i = 0; i &lt; value.length; ++i) {
+    if (i in value) {
+      s.push(i, value[i]);
+      result[i] = callback(this, i);
+      s.length -= 2;
+    }
+  }
+
+  s.length = origLen;
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    (n.arguments[1].type === "FunctionExpression" ||
+      n.arguments[1].type === "ArrowFunctionExpression") &amp;&amp;
+    n.arguments[1].params.length &lt;= 1)
+) {
+  return concat([
+    path.call(print, "callee"),
+    path.call(print, "typeParameters"),
+    concat(["(", join(", ", path.<span class="apidocCodeKeywordSpan">map</span>(print, "arguments")), &amp;#
+x22;)"])
+  ]);
+}
+
+// We detect calls on member lookups and possibly print them in a
+// special chain format. See `printMemberChain` for more info.
+if (n.callee.type === "MemberExpression") {
+  return printMemberChain(path, options, print);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.fast_path.prototype.needsParens" id="apidoc.element.prettier.fast_path.prototype.needsParens">
+        function <span class="apidocSignatureSpan">prettier.fast_path.prototype.</span>needsParens
+        <span class="apidocSignatureSpan">(assumeExpressionContext)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">needsParens = function (assumeExpressionContext) {
+  var parent = this.getParentNode();
+  if (!parent) {
+    return false;
+  }
+
+  var name = this.getName();
+  var node = this.getNode();
+
+  // If the value of this path is some child of a Node and not a Node
+  // itself, then it doesn't need parentheses. Only Node objects (in
+  // fact, only Expression nodes) need parentheses.
+  if (this.getValue() !== node) {
+    return false;
+  }
+
+  // Only statements don't need parentheses.
+  if (n.Statement.check(node)) {
+    return false;
+  }
+
+  // Identifiers never need parentheses.
+  if (node.type === "Identifier") {
+    return false;
+  }
+
+  if (parent.type === "ParenthesizedExpression") {
+    return false;
+  }
+
+  // Add parens around the extends clause of a class. It is needed for almost
+  // all expressions.
+  if (
+    (parent.type === "ClassDeclaration" || parent.type === "ClassExpression") &amp;&amp;
+    parent.superClass === node &amp;&amp;
+    (node.type === "ArrowFunctionExpression" ||
+      node.type === "AssignmentExpression" ||
+      node.type === "AwaitExpression" ||
+      node.type === "BinaryExpression" ||
+      node.type === "ConditionalExpression" ||
+      node.type === "LogicalExpression" ||
+      node.type === "NewExpression" ||
+      node.type === "ObjectExpression" ||
+      node.type === "ParenthesizedExpression" ||
+      node.type === "SequenceExpression" ||
+      node.type === "TaggedTemplateExpression" ||
+      node.type === "UnaryExpression" ||
+      node.type === "UpdateExpression" ||
+      node.type === "YieldExpression")
+  ) {
+    return true;
+  }
+
+  if (
+    (parent.type === "ArrowFunctionExpression" &amp;&amp;
+      parent.body === node &amp;&amp;
+      startsWithNoLookaheadToken(node, /* forbidFunctionAndClass */ false)) ||
+    (parent.type === "ExpressionStatement" &amp;&amp;
+      startsWithNoLookaheadToken(node, /* forbidFunctionAndClass */ true))
+  ) {
+    return true;
+  }
+
+  switch (node.type) {
+    case "CallExpression":
+      if (parent.type === "NewExpression" &amp;&amp; parent.callee === node) {
+        return true;
+      }
+      return false;
+
+    case "SpreadElement":
+    case "SpreadProperty":
+      return (
+        parent.type === "MemberExpression" &amp;&amp;
+        name === "object" &amp;&amp;
+        parent.object === node
+      );
+
+    case "UpdateExpression":
+      if (parent.type === "UnaryExpression") {
+        return (
+          node.prefix &amp;&amp;
+          ((node.operator === "++" &amp;&amp; parent.operator === "+") ||
+            (node.operator === "--" &amp;&amp; parent.operator === "-"))
+        );
+      }
+    // else fall through
+    case "UnaryExpression":
+      switch (parent.type) {
+        case "UnaryExpression":
+          return (
+            node.operator === parent.operator &amp;&amp;
+            (node.operator === "+" || node.operator === "-")
+          );
+
+        case "MemberExpression":
+          return name === "object" &amp;&amp; parent.object === node;
+
+        case "TaggedTemplateExpression":
+          return true;
+
+        case "NewExpression":
+        case "CallExpression":
+          return name === "callee" &amp;&amp; parent.callee === node;
+
+        case "BinaryExpression":
+          return parent.operator === "**" &amp;&amp; name === "left";
+
+        default:
+          return false;
+      }
+
+    case "BinaryExpression":
+      const isLeftOfAForStatement = node =&gt; {
+        let i = 0;
+        while (node) {
+          let parent = this.getParentNode(i++);
+          if (!parent) {
+            return false;
+          }
+          if (parent.type === "ForStatement" &amp;&amp; parent.init === node) {
+            return true;
+          }
+          node = parent;
+        }
+        return false;
+      };
+      if (node.operator === "in" &amp;&amp; isLeftOfAForStatement(node)) {
+        return true;
+      }
+    // else fall through
+    case "LogicalExpression":
+      switch (parent.type) {
+        case "CallExpression":
+        case "NewExpression":
+          return name === "callee" &amp;&amp; parent.callee === node;
+
+        case "TaggedTemplateExpression":
+        case "UnaryExpression":
+        case "SpreadElement":
+        case "SpreadProperty":
+          return true;
+
+        case "MemberExpression":
+          ret ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      parts.push(printPath(decoratorPath), line);
+    },
+    "declaration",
+    "decorators"
+  );
+} else {
+  // Nodes with decorators can't have parentheses, so we can avoid
+  // computing path.<span class="apidocCodeKeywordSpan">needsParens</span>() except in this case.
+  needsParens = path.needsParens();
+}
+
+if (node.type) {
+  // HACK: ASI prevention in no-semi mode relies on knowledge of whether
+  // or not a paren has been inserted (see `exprNeedsASIProtection()`).
+  // For now, we're just passing that information by mutating the AST here,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prettier.options" id="apidoc.module.prettier.options">module prettier.options</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.options.normalize" id="apidoc.element.prettier.options.normalize">
+        function <span class="apidocSignatureSpan">prettier.options.</span>normalize
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function normalize(options) {
+  const normalized = Object.assign({}, options || {});
+
+  if (typeof normalized.trailingComma === "boolean") {
+    // Support a deprecated boolean type for the trailing comma config
+    // for a few versions. This code can be removed later.
+    normalized.trailingComma = "es5";
+
+    console.warn(
+      "Warning: `trailingComma` without any argument is deprecated. " +
+        'Specify "none", "es5", or "all".'
+    );
+  }
+
+  validate(normalized, { exampleConfig, deprecatedConfig });
+
+  // For backward compatibility. Deprecated in 0.0.10
+  if ("useFlowParser" in normalized) {
+    normalized.parser = normalized.useFlowParser ? "flow" : "babylon";
+    delete normalized.useFlowParser;
+  }
+
+  Object.keys(defaults).forEach(k =&gt; {
+    if (normalized[k] == null) {
+      normalized[k] = defaults[k];
+    }
+  });
+
+  return normalized;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prettier.parser" id="apidoc.module.prettier.parser">module prettier.parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.parser.parseWithBabylon" id="apidoc.element.prettier.parser.parseWithBabylon">
+        function <span class="apidocSignatureSpan">prettier.parser.</span>parseWithBabylon
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseWithBabylon(text) {
+  // Inline the require to avoid loading all the JS if we don't use it
+  const babylon = require("babylon");
+
+  return babylon.parse(text, {
+    sourceType: "module",
+    allowImportExportEverywhere: false,
+    allowReturnOutsideFunction: false,
+    plugins: [
+      "jsx",
+      "flow",
+      "doExpressions",
+      "objectRestSpread",
+      "decorators",
+      "classProperties",
+      "exportExtensions",
+      "asyncGenerators",
+      "functionBind",
+      "functionSent",
+      "dynamicImport"
+    ]
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.parser.parseWithFlow" id="apidoc.element.prettier.parser.parseWithFlow">
+        function <span class="apidocSignatureSpan">prettier.parser.</span>parseWithFlow
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseWithFlow(text) {
+  // Inline the require to avoid loading all the JS if we don't use it
+  const flowParser = require("flow-parser");
+
+  const ast = flowParser.parse(text, {
+    esproposal_class_instance_fields: true,
+    esproposal_class_static_fields: true,
+    esproposal_export_star_as: true
+  });
+
+  if (ast.errors.length &gt; 0) {
+    // Construct an error similar to the ones thrown by Babylon.
+    const loc = {
+      line: ast.errors[0].loc.start.line,
+      column: ast.errors[0].loc.start.column
+    };
+    const msg =
+      ast.errors[0].message + " (" + loc.line + ":" + loc.column + ")";
+    const error = new SyntaxError(msg);
+    error.loc = loc;
+    throw error;
+  }
+
+  return ast;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.parser.parseWithTypeScript" id="apidoc.element.prettier.parser.parseWithTypeScript">
+        function <span class="apidocSignatureSpan">prettier.parser.</span>parseWithTypeScript
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseWithTypeScript(text) {
+  // While we are working on typescript, we are putting it in devDependencies
+  // so it shouldn't be picked up by static analysis
+  const r = require;
+  const parser = r("typescript-eslint-parser");
+  return parser.parse(text, {
+    loc: true,
+    range: true,
+    tokens: true,
+    attachComment: true,
+    ecmaFeatures: {
+      jsx: true
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prettier.printer" id="apidoc.module.prettier.printer">module prettier.printer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.printer.printAstToDoc" id="apidoc.element.prettier.printer.printAstToDoc">
+        function <span class="apidocSignatureSpan">prettier.printer.</span>printAstToDoc
+        <span class="apidocSignatureSpan">(ast, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function printAstToDoc(ast, options) {
+  function printGenerically(path, args) {
+    return comments.printComments(
+      path,
+      p =&gt; genericPrint(p, options, printGenerically, args),
+      options,
+      args &amp;&amp; args.needsSemi
+    );
+  }
+
+  const doc = printGenerically(FastPath.from(ast));
+  docUtils.propagateBreaks(doc);
+  return doc;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.prettier.util" id="apidoc.module.prettier.util">module prettier.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.getLast" id="apidoc.element.prettier.util.getLast">
+        function <span class="apidocSignatureSpan">prettier.util.</span>getLast
+        <span class="apidocSignatureSpan">(arr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getLast(arr) {
+  if (arr.length &gt; 0) {
+    return arr[arr.length - 1];
+  }
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      util.isNextLineEmpty(options.originalText, childPath.getValue())
+    ) {
+      separatorParts.push(hardline);
+    }
+  }, field);
+});
+
+const lastElem = util.<span class="apidocCodeKeywordSpan">getLast</span>(n[propertiesField]);
+
+const canHaveTrailingComma = !(
+  lastElem &amp;&amp;
+  (lastElem.type === "RestProperty" || lastElem.type === "RestElement")
+);
+
+const shouldBreak =
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.getNextNonSpaceNonCommentCharacter" id="apidoc.element.prettier.util.getNextNonSpaceNonCommentCharacter">
+        function <span class="apidocSignatureSpan">prettier.util.</span>getNextNonSpaceNonCommentCharacter
+        <span class="apidocSignatureSpan">(text, node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getNextNonSpaceNonCommentCharacter(text, node) {
+  let oldIdx = null;
+  let idx = locEnd(node);
+  while (idx !== oldIdx) {
+    oldIdx = idx;
+    idx = skipSpaces(text, idx);
+    idx = skipInlineComment(text, idx);
+    idx = skipTrailingComment(text, idx);
+    idx = skipNewline(text, idx);
+  }
+  return text.charAt(idx);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.getParentExportDeclaration" id="apidoc.element.prettier.util.getParentExportDeclaration">
+        function <span class="apidocSignatureSpan">prettier.util.</span>getParentExportDeclaration
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getParentExportDeclaration(path) {
+  var parentNode = path.getParentNode();
+  if (path.getName() === "declaration" &amp;&amp; isExportDeclaration(parentNode)) {
+    return parentNode;
+  }
+
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+if (
+  node.decorators &amp;&amp;
+  node.decorators.length &gt; 0 &amp;&amp;
+  // If the parent node is an export declaration, it will be
+  // responsible for printing node.decorators.
+  !util.<span class="apidocCodeKeywordSpan">getParentExportDeclaration</span>(path)
+) {
+  const separator = node.decorators.length === 1 &amp;&amp;
+    (node.decorators[0].expression.type === "Identifier" ||
+      node.decorators[0].expression.type === "MemberExpression")
+    ? " "
+    : hardline;
+  path.each(function(decoratorPath) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.getPenultimate" id="apidoc.element.prettier.util.getPenultimate">
+        function <span class="apidocSignatureSpan">prettier.util.</span>getPenultimate
+        <span class="apidocSignatureSpan">(arr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getPenultimate(arr) {
+  if (arr.length &gt; 1) {
+    return arr[arr.length - 2];
+  }
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      arg.body.type === "CallExpression" ||
+      arg.body.type === "JSXElement"))
+);
+}
+
+function shouldGroupLastArg(args) {
+const lastArg = util.getLast(args);
+const penultimateArg = util.<span class="apidocCodeKeywordSpan">getPenultimate</span>(args);
+return (
+  (!lastArg.comments || !lastArg.comments.length) &amp;&amp;
+  couldGroupArg(lastArg) &amp;&amp;
+  // If the last two arguments are of the same type,
+  // disable last element expansion.
+  (!penultimateArg || penultimateArg.type !== lastArg.type)
+);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.getPrecedence" id="apidoc.element.prettier.util.getPrecedence">
+        function <span class="apidocSignatureSpan">prettier.util.</span>getPrecedence
+        <span class="apidocSignatureSpan">(op)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getPrecedence(op) {
+  return PRECEDENCE[op];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+        case "MemberExpression":
+return name === "object" &amp;&amp; parent.object === node;
+
+        case "BinaryExpression":
+        case "LogicalExpression":
+var po = parent.operator;
+var pp = util.<span class="apidocCodeKeywordSpan">getPrecedence</span>(po);
+var no = node.operator;
+var np = util.getPrecedence(no);
+
+if (po === "||" &amp;&amp; no === "&amp;&amp;") {
+  return true;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.hasNewline" id="apidoc.element.prettier.util.hasNewline">
+        function <span class="apidocSignatureSpan">prettier.util.</span>hasNewline
+        <span class="apidocSignatureSpan">(text, index, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hasNewline(text, index, opts) {
+  opts = opts || {};
+  const idx = skipSpaces(text, opts.backwards ? index - 1 : index, opts);
+  const idx2 = skipNewline(text, idx, opts);
+  return idx !== idx2;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+const precedingNode = comment.precedingNode;
+const enclosingNode = comment.enclosingNode;
+const followingNode = comment.followingNode;
+
+const isLastComment = comments.length - 1 === i;
+
+if (util.<span class="apidocCodeKeywordSpan">hasNewline</span>(text, locStart(comment), { backwards: true })) {
+  // If a comment exists on its own line, prefer a leading comment.
+  // We also need to check if it's the first line of the file.
+  if (
+    handleLastFunctionArgComments(
+      text,
+      precedingNode,
+      enclosingNode,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.hasNewlineInRange" id="apidoc.element.prettier.util.hasNewlineInRange">
+        function <span class="apidocSignatureSpan">prettier.util.</span>hasNewlineInRange
+        <span class="apidocSignatureSpan">(text, start, end)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hasNewlineInRange(text, start, end) {
+  for (var i = start; i &lt; end; ++i) {
+    if (text.charAt(i) === "\n") {
+      return true;
+    }
+  }
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+precedingNode,
+followingNode,
+comment,
+text
+) {
+const isSameLineAsPrecedingNode =
+  precedingNode &amp;&amp;
+  !util.<span class="apidocCodeKeywordSpan">hasNewlineInRange</span>(text, locEnd(precedingNode), locStart(comment));
+
+if (
+  (!precedingNode || !isSameLineAsPrecedingNode) &amp;&amp;
+  enclosingNode &amp;&amp;
+  enclosingNode.type === "ConditionalExpression" &amp;&amp;
+  followingNode
+) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.hasSpaces" id="apidoc.element.prettier.util.hasSpaces">
+        function <span class="apidocSignatureSpan">prettier.util.</span>hasSpaces
+        <span class="apidocSignatureSpan">(text, index, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hasSpaces(text, index, opts) {
+  opts = opts || {};
+  const idx = skipSpaces(text, opts.backwards ? index - 1 : index, opts);
+  return idx !== index;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.htmlEscapeInsideAngleBracket" id="apidoc.element.prettier.util.htmlEscapeInsideAngleBracket">
+        function <span class="apidocSignatureSpan">prettier.util.</span>htmlEscapeInsideAngleBracket
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function htmlEscapeInsideAngleBracket(str) {
+  return str.replace(/&lt;/g, "&amp;lt;").replace(/&gt;/g, "&amp;gt;");
+  // Intentionally disable the following since it is safe inside of a
+  // angle bracket context
+  //    .replace(/&amp;/g, '&amp;amp;')
+  //    .replace(/"/g, '&amp;quot;')
+  //    .replace(/'/g, '&amp;#39;')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// There's a bug in the flow parser where it doesn't unescape the
+// value field. To workaround this, we can use rawValue which is
+// correctly escaped (since it parsed).
+// We really want to use value and re-escape it ourself when possible
+// though.
+const partiallyEscapedValue = options.parser === "flow"
+  ? child.raw
+  : util.<span class="apidocCodeKeywordSpan">htmlEscapeInsideAngleBracket</span>(child.value);
+const value = partiallyEscapedValue.replace(/\u00a0/g, "&amp;nbsp;");
+
+if (/\S/.test(value)) {
+  // treat each line of text as its own entity
+  value.split(/(\r?\n\s*)/).forEach(line =&gt; {
+    const newlines = line.match(/\n/g);
+    if (newlines) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.isExportDeclaration" id="apidoc.element.prettier.util.isExportDeclaration">
+        function <span class="apidocSignatureSpan">prettier.util.</span>isExportDeclaration
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isExportDeclaration(node) {
+  if (node)
+    switch (node.type) {
+      case "ExportDeclaration":
+      case "ExportDefaultDeclaration":
+      case "ExportDefaultSpecifier":
+      case "DeclareExportDeclaration":
+      case "ExportNamedDeclaration":
+      case "ExportAllDeclaration":
+        return true;
+    }
+
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      node.decorators[0].expression.type === "MemberExpression")
+    ? " "
+    : hardline;
+  path.each(function(decoratorPath) {
+    parts.push(printPath(decoratorPath), separator);
+  }, "decorators");
+} else if (
+  util.<span class="apidocCodeKeywordSpan">isExportDeclaration</span>(node) &amp;&amp;
+  node.declaration &amp;&amp;
+  node.declaration.decorators
+) {
+  // Export declarations are responsible for printing any decorators
+  // that logically apply to node.declaration.
+  path.each(
+    function(decoratorPath) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.isNextLineEmpty" id="apidoc.element.prettier.util.isNextLineEmpty">
+        function <span class="apidocSignatureSpan">prettier.util.</span>isNextLineEmpty
+        <span class="apidocSignatureSpan">(text, node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNextLineEmpty(text, node) {
+  let oldIdx = null;
+  let idx = locEnd(node);
+  while (idx !== oldIdx) {
+    // We need to skip all the potential trailing inline comments
+    oldIdx = idx;
+    idx = skipToLineEnd(text, idx);
+    idx = skipInlineComment(text, idx);
+    idx = skipSpaces(text, idx);
+  }
+  idx = skipTrailingComment(text, idx);
+  idx = skipNewline(text, idx);
+  return hasNewline(text, idx);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return path.call(print, "program");
+    case "Program":
+// Babel 6
+if (n.directives) {
+  path.each(function(childPath) {
+    parts.push(print(childPath), semi, hardline);
+    if (
+      util.<span class="apidocCodeKeywordSpan">isNextLineEmpty</span>(options.originalText, childPath.getValue())
+    ) {
+      parts.push(hardline);
+    }
+  }, "directives");
+}
+
+parts.push(
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.isPreviousLineEmpty" id="apidoc.element.prettier.util.isPreviousLineEmpty">
+        function <span class="apidocSignatureSpan">prettier.util.</span>isPreviousLineEmpty
+        <span class="apidocSignatureSpan">(text, node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isPreviousLineEmpty(text, node) {
+  let idx = locStart(node) - 1;
+  idx = skipSpaces(text, idx, { backwards: true });
+  idx = skipNewline(text, idx, { backwards: true });
+  idx = skipSpaces(text, idx, { backwards: true });
+  const idx2 = skipNewline(text, idx, { backwards: true });
+  return idx !== idx2;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// }
+// Those kinds of comments are almost always leading comments, but
+// here it doesn't go "outside" the block and turns it into a
+// trailing comment for `2`. We can simulate the above by checking
+// if this a comment on its own line; normal trailing comments are
+// always at the end of another expression.
+
+const isLineBeforeEmpty = util.<span class="apidocCodeKeywordSpan">isPreviousLineEmpty</span>(
+  options.originalText,
+  comment
+);
+
+return lineSuffix(
+  concat([hardline, isLineBeforeEmpty ? hardline : "", contents])
+);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.locEnd" id="apidoc.element.prettier.util.locEnd">
+        function <span class="apidocSignatureSpan">prettier.util.</span>locEnd
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function locEnd(node) {
+  if (node.range) {
+    return node.range[1];
+  }
+  return node.end;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var leading = types.getFieldValue(comment, "leading");
+var trailing = types.getFieldValue(comment, "trailing");
+
+if (leading) {
+  leadingParts.push(printLeadingComment(commentPath, print, options));
+
+  const text = options.originalText;
+  if (util.hasNewline(text, util.skipNewline(text, util.<span class="apidocCodeKeywordSpan">locEnd</span>(comment)))) {
+    leadingParts.push(hardline);
+  }
+} else if (trailing) {
+  trailingParts.push(
+    printTrailingComment(commentPath, print, options, parent)
+  );
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.locStart" id="apidoc.element.prettier.util.locStart">
+        function <span class="apidocSignatureSpan">prettier.util.</span>locStart
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function locStart(node) {
+  if (node.range) {
+    return node.range[0];
+  }
+  return node.start;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Escape hatch
+if (
+  node &amp;&amp;
+  node.comments &amp;&amp;
+  node.comments.length &gt; 0 &amp;&amp;
+  node.comments.some(comment =&gt; comment.value.trim() === "prettier-ignore")
+) {
+  return options.originalText.slice(util.<span class="apidocCodeKeywordSpan">locStart</span>(node), util.locEnd(node));
+}
+
+var parts = [];
+var needsParens = false;
+var linesWithoutParens = genericPrintNoParens(path, options, printPath, args);
+
+if (!node || isEmpty(linesWithoutParens)) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.setLocEnd" id="apidoc.element.prettier.util.setLocEnd">
+        function <span class="apidocSignatureSpan">prettier.util.</span>setLocEnd
+        <span class="apidocSignatureSpan">(node, index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setLocEnd(node, index) {
+  if (node.range) {
+    node.range[1] = index;
+  } else {
+    node.end = index;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.setLocStart" id="apidoc.element.prettier.util.setLocStart">
+        function <span class="apidocSignatureSpan">prettier.util.</span>setLocStart
+        <span class="apidocSignatureSpan">(node, index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setLocStart(node, index) {
+  if (node.range) {
+    node.range[0] = index;
+  } else {
+    node.start = index;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.skipNewline" id="apidoc.element.prettier.util.skipNewline">
+        function <span class="apidocSignatureSpan">prettier.util.</span>skipNewline
+        <span class="apidocSignatureSpan">(text, index, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function skipNewline(text, index, opts) {
+  const backwards = opts &amp;&amp; opts.backwards;
+  if (index === false) {
+    return false;
+  }
+
+  const atIndex = text.charAt(index);
+  if (backwards) {
+    if (text.charAt(index - 1) === "\r" &amp;&amp; atIndex === "\n") {
+      return index - 2;
+    }
+    if (
+      atIndex === "\n" ||
+      atIndex === "\r" ||
+      atIndex === "\u2028" ||
+      atIndex === "\u2029"
+    ) {
+      return index - 1;
+    }
+  } else {
+    if (atIndex === "\r" &amp;&amp; text.charAt(index + 1) === "\n") {
+      return index + 2;
+    }
+    if (
+      atIndex === "\n" ||
+      atIndex === "\r" ||
+      atIndex === "\u2028" ||
+      atIndex === "\u2029"
+    ) {
+      return index + 1;
+    }
+  }
+
+  return index;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var leading = types.getFieldValue(comment, "leading");
+var trailing = types.getFieldValue(comment, "trailing");
+
+if (leading) {
+  leadingParts.push(printLeadingComment(commentPath, print, options));
+
+  const text = options.originalText;
+  if (util.hasNewline(text, util.<span class="apidocCodeKeywordSpan">skipNewline</span>(text, util.locEnd(comment)))) {
+    leadingParts.push(hardline);
+  }
+} else if (trailing) {
+  trailingParts.push(
+    printTrailingComment(commentPath, print, options, parent)
+  );
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.skipSpaces" id="apidoc.element.prettier.util.skipSpaces">
+        function <span class="apidocSignatureSpan">prettier.util.</span>skipSpaces
+        <span class="apidocSignatureSpan">(text, index, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(text, index, opts) =&gt; {
+  const backwards = opts &amp;&amp; opts.backwards;
+
+  // Allow `skip` functions to be threaded together without having
+  // to check for failures (did someone say monads?).
+  if (index === false) {
+    return false;
+  }
+
+  const length = text.length;
+  let cursor = index;
+  while (cursor &gt;= 0 &amp;&amp; cursor &lt; length) {
+    const c = text.charAt(cursor);
+    if (chars instanceof RegExp) {
+      if (!chars.test(c)) {
+        return cursor;
+      }
+    } else if (chars.indexOf(c) === -1) {
+      return cursor;
+    }
+
+    backwards ? cursor-- : cursor++;
+  }
+
+  if (cursor === -1 || cursor === length) {
+    // If we reached the beginning or end of the file, return the
+    // out-of-bounds cursor. It's up to the caller to handle this
+    // correctly. We don't want to indicate `false` though if it
+    // actually skipped valid characters.
+    return cursor;
+  }
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.prettier.util.skipWhitespace" id="apidoc.element.prettier.util.skipWhitespace">
+        function <span class="apidocSignatureSpan">prettier.util.</span>skipWhitespace
+        <span class="apidocSignatureSpan">(text, index, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(text, index, opts) =&gt; {
+  const backwards = opts &amp;&amp; opts.backwards;
+
+  // Allow `skip` functions to be threaded together without having
+  // to check for failures (did someone say monads?).
+  if (index === false) {
+    return false;
+  }
+
+  const length = text.length;
+  let cursor = index;
+  while (cursor &gt;= 0 &amp;&amp; cursor &lt; length) {
+    const c = text.charAt(cursor);
+    if (chars instanceof RegExp) {
+      if (!chars.test(c)) {
+        return cursor;
+      }
+    } else if (chars.indexOf(c) === -1) {
+      return cursor;
+    }
+
+    backwards ? cursor-- : cursor++;
+  }
+
+  if (cursor === -1 || cursor === length) {
+    // If we reached the beginning or end of the file, return the
+    // out-of-bounds cursor. It's up to the caller to handle this
+    // correctly. We don't want to indicate `false` though if it
+    // actually skipped valid characters.
+    return cursor;
+  }
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
